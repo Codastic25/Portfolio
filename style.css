@@ -1,0 +1,390 @@
+/* Réinitialisation des styles */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Josefin Sans', serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+body {
+    background-color: #3C71B1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%234464aa' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%234c57a3' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23544a9d' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%235c3d96' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2364308F' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Josefin Sans', serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Style du header */
+header {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Montserrat', serif;
+}
+
+p {
+    color: #555;
+    line-height: 1.5;
+    font-family: 'Josefin Sans', serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Menu container (nav) */
+.menu {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement les éléments */
+    align-items: center; /* Centrer verticalement si nécessaire */
+
+}
+
+/* Liste du menu */
+.menu-list {
+    display: flex; /* Par défaut, Flexbox aligne les éléments en ligne */
+    gap: 20px; /* Espace entre les éléments */
+    background-color: #decdff;
+    border-radius: 50px;
+}
+
+.menu-list li {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    position: relative; /* Nécessaire pour positionner le sous-menu */
+}
+
+/* Sous-menu caché par défaut */
+.sub-menu, .sub-menu-1 {
+    display: none; /* Masqué par défaut */
+    position: absolute; /* Positionnement sous le parent */
+    left: 0; /* Aligner à gauche du parent */
+    top: 100%; /* Positionner sous l'élément parent */
+    background-color: #eeeeec;
+    padding: 10px;
+    border-radius: 25px;
+    width: auto; /* Largeur de la petite fenêtre */
+}
+
+/* Conteneur pour les logos */
+.sub-menu-2 {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #eeeeec;
+    padding: 10px;
+    border-radius: 50px;
+    width: auto; /* Ajuster automatiquement en fonction du contenu */
+    white-space: nowrap; /* Empêche les logos de passer à la ligne */
+}
+
+.sub-menu li, .sub-menu-1 li, .sub-menu-2 li {
+    color: rgb(0, 0, 0);
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+/* Affichage du sous-menu au survol de l'élément parent */
+#profil:hover .sub-menu {
+    display: block;
+    box-shadow: 10px 10px 30px #cacac9, -10px -10px 30px #ffffff;
+}
+
+#projets:hover .sub-menu-1 {
+    display: block;
+    box-shadow: 10px 10px 30px #cacac9, -10px -10px 30px #ffffff;
+}
+
+/* Affichage du conteneur au survol */
+#contacts:hover .sub-menu-2 {
+    display: block;
+    box-shadow: 10px 10px 30px #cacac9, -10px -10px 30px #ffffff;
+}
+
+/* Style pour les logos */
+#logo_mail, #logo_github, #logo_linkedin, #logo_tel {
+    width: 50px;
+    height: 50px;
+    margin: 5px; /* Espacement entre les logos */
+    display: inline-block; /* Les logos s'affichent en ligne */
+    vertical-align: middle; /* Alignement vertical */
+    object-fit: contain; /* Ajuste l'image pour qu'elle reste dans les dimensions définies */
+    border: none; /* Supprime toute bordure éventuelle autour de l'image */
+    box-sizing: border-box; /* Gère correctement les dimensions en incluant les paddings/marges */
+}
+
+/* Ajouter un effet de survol pour les logos */
+#logo_mail:hover, #logo_github:hover, #logo_linkedin:hover, #logo_tel:hover {
+    transform: scale(1.2); /* Agrandir légèrement au survol */
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* Option pour forcer la suppression de marges internes (si elles viennent des images) */
+#logo_mail img, #logo_github img, #logo_linkedin img, #logo_tel img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#profil:hover, #projets:hover, #contacts:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    border-radius: 45px; /* Garder les coins arrondis */
+    background: #eeeeec;
+}
+
+#profil, #projets, #contacts {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px; /* Ajuste la taille du texte */
+    padding: 15px 30px; /* Espacement intérieur : 15px (haut/bas) et 30px (gauche/droite) */
+    display: inline-block; /* Assure que chaque case occupe juste l'espace nécessaire */
+    text-align: center; /* Centre le texte dans la case */
+    margin: 7px; /* Ajoute un espace entre les cases */
+}
+
+/* Style général pour la section About Me */
+.bloc1 {
+    width: 80%;
+    margin: 0 auto; /* Centrer le bloc */
+    padding: 20px;
+    background-color: #decdff; /* Fond clair */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-align: center; /* Centrer le contenu */
+    margin-bottom: 20px; /* Ajoute de l'espace sous ce bloc */
+}
+
+/* Bloc général */
+.bloc2 {
+    width: 80%;
+    margin: 0 auto; /* Centrer le bloc */
+    padding: 20px;
+    background-color: #decdff; /* Fond clair */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-align: center; /* Centrer le contenu */
+    margin-bottom: 20px; /* Ajoute de l'espace sous ce bloc */
+}
+
+/* Bloc général */
+.bloc3 {
+    width: 80%;
+    margin: 0 auto; /* Centrer le bloc */
+    padding: 20px;
+    background-color: #decdff; /* Fond clair */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    text-align: center; /* Centrer le contenu */
+    margin-bottom: 20px; /* Ajoute de l'espace sous ce bloc */
+}
+
+/* Image du profil */
+#ma_photo {
+    width: 150px; /* Ajustez selon vos besoins */
+    height: 150px;
+    border-radius: 50%; /* Image circulaire */
+    margin: 20px 0;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre autour de la photo */
+}
+
+/* Liste des logos */
+.contact-logos {
+    display: flex; /* Utilisation de Flexbox */
+    flex-direction: column; /* Aligne les éléments en colonne (vertical) */
+    gap: 20px; /* Espacement vertical entre les logos */
+    padding: 0;
+    list-style: none; /* Supprime les puces de liste */
+    margin: 20px auto; /* Centre le contenu horizontalement */
+    text-align: left; /* Texte aligné à gauche */
+}
+
+/* Style des images des logos */
+.logo {
+    width: 50px; /* Largeur des logos */
+    height: 50px; /* Hauteur des logos */
+    object-fit: contain; /* Ajuste l'image dans le cadre sans déformer */
+    margin-right: 10px; /* Espacement entre le logo et le texte */
+    vertical-align: middle; /* Aligne les images avec le texte */
+    transition: transform 0.2s ease-in-out; /* Animation sur le hover */
+}
+
+/* Effet au survol des logos */
+.logo:hover {
+    transform: scale(1.2); /* Agrandit légèrement au survol */
+    cursor: pointer;
+}
+
+/* Liens */
+.contact-logos li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #333; /* Couleur du texte */
+    font-size: 16px; /* Taille du texte */
+}
+
+.contact-logos li a:hover {
+    color: #4CAF50; /* Change la couleur du lien au survol */
+}
+
+/* Liste des skills */
+.skills {
+    display: flex; /* Flexbox pour aligner les éléments */
+    flex-wrap: wrap; /* Les items passent à la ligne si nécessaire */
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 30px; /* Espacement entre les items */
+    list-style: none; /* Supprime les puces */
+    padding: 0;
+}
+
+/* Style des items de la liste */
+.skills li {
+    text-align: center; /* Centre chaque compétence */
+    max-width: 150px; /* Largeur maximale des items */
+}
+
+/* Logos des skills */
+.logo_skills {
+    width: 50px; /* Uniformisez la taille des logos */
+    height: 50px;
+    margin-top: 10px;
+    object-fit: contain; /* Ajuste l'image pour qu'elle reste entière */
+    transition: transform 0.2s ease-in-out; /* Animation au survol */
+}
+
+/* Effet au survol des logos */
+.logo_skills:hover {
+    transform: scale(1.2); /* Zoom léger */
+    cursor: pointer;
+}
+
+/* Liste des hobbies */
+.hobbies {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centre horizontalement les items dans le conteneur */
+    gap: 30px; /* Espacement horizontal entre les items */
+    padding: 0;
+    list-style: none; /* Supprime les puces de liste */
+    margin: 20px auto; /* Centrage du conteneur */
+}
+
+/* Style pour chaque hobby */
+.hobbies li {
+    display: flex; /* Flexbox pour alignement vertical interne */
+    flex-direction: column; /* Colonne pour avoir le texte au-dessus de l'image */
+    align-items: center; /* Centre horizontalement dans chaque bloc */
+    text-align: center; /* Centre le texte */
+    gap: 10px; /* Espacement entre le texte et l'image */
+}
+
+/* Style des images */
+.logo_hobbies {
+    width: 50px; /* Taille fixe pour uniformité */
+    height: 50px;
+    object-fit: contain; /* Ajuste l'image sans déformation */
+    transition: transform 0.2s ease-in-out; /* Animation au survol */
+}
+
+/* Effet au survol des images */
+.logo_hobbies:hover {
+    transform: scale(1.2); /* Agrandissement au survol */
+    cursor: pointer;
+}
+
+/* Style du texte */
+.hobbies p {
+    font-size: 18px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+/* Liste des logos dans Education */
+.education {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centre horizontalement les items */
+    gap: 40px; /* Espacement horizontal entre les items */
+    padding: 0;
+    list-style: none; /* Supprime les puces de liste */
+    margin: 20px auto; /* Centrage du conteneur */
+}
+
+/* Style pour chaque élément d'éducation */
+.education li {
+    display: flex; /* Utilisation de flexbox pour aligner le texte et l'image */
+    flex-direction: column; /* Aligne le texte au-dessus de l'image */
+    align-items: center; /* Centre horizontalement dans chaque bloc */
+    text-align: center; /* Centre le texte */
+    gap: 10px; /* Espacement entre le texte et l'image */
+    width: 150px; /* Largeur fixe pour chaque item */
+}
+
+/* Style spécifique pour CySchool logo */
+.logo_educ[src*="CYED"] {
+    width: 100px;  /* Réglez la taille pour être la même que les autres */
+    height: 100px;
+    object-fit: contain; /* L'image est ajustée sans déformation */
+    transition: transform 0.2s ease-in-out; /* Animation sur hover */
+}
+
+
+/* Style des logos dans la section Education */
+.logo_educ {
+    width: 100px;  /* Largeur uniforme pour tous les logos */
+    height: 100px;  /* Hauteur uniforme pour tous les logos */
+    object-fit: contain; /* Ajuste l'image sans déformation */
+    transition: transform 0.2s ease-in-out; /* Animation sur le hover */
+    max-width: 100px;  /* Limite la largeur maximale */
+    max-height: 100px; /* Limite la hauteur maximale */
+}
+
+
+/* Effet au survol des logos */
+.logo_educ:hover {
+    transform: scale(1.2); /* Agrandissement au survol */
+    cursor: pointer;
+}
+
+/* Style du texte dans les éléments d'éducation */
+.education p {
+    font-size: 16px; /* Taille du texte */
+    color: #333; /* Couleur du texte */
+    margin: 0; /* Supprime les marges par défaut */
+    font-weight: normal; /* Poids de la police */
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 20px; /* Distance par rapport au bas de la page */
+    right: 20px; /* Distance par rapport au côté droit */
+    width: 50px; /* Largeur du bouton */
+    height: 50px; /* Hauteur du bouton */
+    background-color: #ffffff; /* Couleur de fond */
+    color: rgb(0, 0, 0); /* Couleur du texte */
+    border: none; /* Supprime les bordures */
+    border-radius: 50%; /* Bouton rond */
+    font-size: 24px; /* Taille de la flèche */
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour l'esthétique */
+    display: none; /* Caché par défaut */
+    z-index: 1000; /* Toujours au-dessus des autres éléments */
+}
+
+#scrollToTop:hover {
+    background-color: #6a6cae; /* Couleur au survol */
+}
+
+
+
